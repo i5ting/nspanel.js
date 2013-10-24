@@ -1,0 +1,4 @@
+/* debug */
+.panel_header_with_no_word > .button_container > a{
+	border:1px red solid;
+}

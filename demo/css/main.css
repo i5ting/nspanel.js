@@ -1,0 +1,158 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+
+ul,li {
+	padding:10px;
+	margin:0;
+}
+
+body {
+	padding:0px;
+	margin:0;
+	top:0;
+	font-size:12px;
+	-webkit-user-select:none;
+  -webkit-text-size-adjust:none;
+	font-family:helvetica;
+	width:100%;
+}
+
+/**/
+.panel_header{
+	display:block;
+	top:0px;
+	width:100%;
+	height:55px;
+  background-image: url(../images/shop_logo.png);
+	background-size: 100% 55px;
+    background-repeat: no-repeat;
+}
+
+/**/
+.panel_header_with_no_word{
+	display:block;
+	padding-left: 3%;
+	padding-right: 3%;
+	top:0px;
+	width:94%;
+	height:44px;
+  background-image: url(../images/topbar_no_word.png);
+	background-size: 100% 44px;
+  background-repeat: no-repeat;
+}
+
+.panel_header_with_no_word > .button_container > a{
+	display:block;
+	margin:1px;
+	width:100%;
+	height:98%;
+}
+
+.button_container{
+	display:block;
+	position:absolute;
+	top:0px;
+	width:62px;
+	height:40px;
+}
+
+div.button_container:nth-child(1) {
+	left: 10px
+}
+
+div.button_container:nth-child(2) {
+		right: 10px
+}
+
+.left10{
+	left: 10px
+} 
+
+.right10{
+	right: 10px
+} 
+
+.panel_header_button_left{
+	display:block;
+	position:absolute;
+	top:10px;
+	width:12px;
+	height:22px;
+	float:left;
+  background-image: url(../images/topbar_button_retrun.png);
+	background-size: 12px 22px;
+  background-repeat: no-repeat;
+}
+
+.panel_header_button_right{
+	display:block;
+	position:absolute;
+	right:10px;
+	top:10px;
+	width:20px;
+	height:18px;
+	float:right;
+  background-image: url(../images/topbar_button_home.png);
+	background-size: 20px 18px;
+  background-repeat: no-repeat;
+}
+
+/**/
+.panel_header1{
+	display:block;
+	top:0px;
+	width:100%;
+	height:35px;
+    background-image: url(../images/shop_logo1.png);
+ 
+	background-size: 100% 35px;
+    background-repeat: no-repeat;
+}
+
+/**/
+.panel_footer
+{
+	display:block;
+	bottom:0px;
+	width:100%;
+	height:40px;
+  background-image: url(../images/index_bottom.png);
+  background-position: right center;
+	background-size: 100% 40px;
+  background-repeat: no-repeat;
+	position:fixed;
+	text-align:center;
+	z-index:3;
+}
+.panel_footer > a{
+	display:block;
+	bottom:0px;
+	width:100%;
+	height:100%;
+}
+.panel_footer > a > span{
+	position:relative;
+	top:12px;
+	font-size:13px; 
+	font-color:#b99000;
+}
+
+.panel_footer > span{
+	position:relative;
+	top:12px;
+	font-size:13px; 
+	font-color:#b99000;
+}
+
+/*.panel_footer*/
+.panel_content {
+		width:100%;
+		left:3%;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
