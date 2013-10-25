@@ -43,7 +43,7 @@ _(Coming soon)_
 
 ## Release History
 
-- v0.1.0 支持无限嵌套
+- v0.1.0 支持无限嵌套 2013-10-24
 
 
 ## Contributing
