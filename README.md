@@ -28,6 +28,14 @@ jQuery(function($) {
 });
 </script>
 ```
+## View Demo
+
+```
+	cd ${PROJECT_HOME}
+	./start
+```
+
+http://127.0.0.1:5001/demo/index.html
 
 ## Documentation
 _(Coming soon)_
