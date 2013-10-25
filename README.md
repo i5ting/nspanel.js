@@ -31,8 +31,8 @@ jQuery(function($) {
 ## View Demo
 
 ```
-	cd ${PROJECT_HOME}
-	./start
+cd ${PROJECT_HOME}
+./start.sh
 ```
 
 http://127.0.0.1:5001/demo/index.html
