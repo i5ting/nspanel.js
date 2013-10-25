@@ -65,7 +65,6 @@
 	/**
 	 * @param context 		: 插件上下文
 	 * @param opt		  		: 插件配置选项
-	 * @param item_number : 当前item在自己归属的section中的index
 	 */ 
 	function create_section_dom(context,opt){
 		var _new_panel_id = get_new_panel_id(context,opt);
