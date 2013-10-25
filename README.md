@@ -28,7 +28,7 @@ jQuery(function($) {
 });
 </script>
 ```
-## View Demo
+## Examples
 
 ```
 cd ${PROJECT_HOME}
@@ -38,13 +38,13 @@ cd ${PROJECT_HOME}
 http://127.0.0.1:5001/demo/index.html
 
 ## Documentation
-_(Coming soon)_
 
-## Examples
 _(Coming soon)_
 
 ## Release History
-_(Nothing yet)_
+
+- v0.1.0 支持无限嵌套
+
 
 ## Contributing
 
