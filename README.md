@@ -45,3 +45,21 @@ _(Coming soon)_
 
 ## Release History
 _(Nothing yet)_
+
+## Contributing
+
+1. Fork it
+1. Create your feature branch (git checkout -b my-new-feature)
+1. Commit your changes (git commit -am 'Add some feature')
+1. Push to the branch (git push origin my-new-feature)
+1. Create new Pull Request
+
+## License
+
+this project is released under the MIT license:
+
+http://www.opensource.org/licenses/mit-license.php
+
+## 欢迎fork和反馈
+
+在issue提问或邮件shiren1118@126.com
