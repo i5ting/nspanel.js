@@ -29,6 +29,9 @@
 	 * hide
 	 */ 
 	function hide_current_panel(new_panel_id,opt){
+		// cb
+		_hide_cb(new_panel_id,opt);
+		
 		//显示前一个页面
 		show_pre_panel(opt);
 		
@@ -49,8 +52,8 @@
 	 * show
 	 */ 
 	function show_current_panel(new_panel_id,opt){
-		//隐藏前一个页面 		
-		// sid_push(sid); 
+		// cb
+		_show_cb(new_panel_id,opt);
 		
 		//显示当前页面
 		$( "#" + new_panel_id ).show().animate({
@@ -61,7 +64,7 @@
 				hide_pre_panel(opt);
 		 });
 	}
-	
+
 	/**
 	 * @param context 		: 插件上下文
 	 * @param opt		  		: 插件配置选项
@@ -132,6 +135,29 @@
 		return opt._viewstack[opt._viewstack.length - 2];
 	}
 	
+	function _show_cb(new_panel_id,opt){
+		var level = new_panel_id.split('_')[0];
+		var item_index = new_panel_id.split('_')[1];
+		
+		// console.log(_get_pre_panel(opt).attr('id'));
+		// cb
+		opt.show_cb(level,item_index);
+	}
+	
+	function _hide_cb(new_panel_id,opt){
+		var level = new_panel_id.split('_')[0];
+		var item_index = new_panel_id.split('_')[1];
+		// cb
+		opt.hide_cb(level,item_index);
+	}
+	
+	function _click_cb(new_panel_id,opt){
+		var level = new_panel_id.split('_')[0];
+		var item_index = new_panel_id.split('_')[1];
+		// cb
+		return opt.bool_click_cb(level,item_index);
+	}
+	
 	//----------------------- jquery   plugin  -----------------------
   $.fn.nspanel = function(options) {       
 		// init var
@@ -166,6 +192,12 @@
  
 			// a标签点击的时候，加载html，加载完成后显示
 			$this.off('click').on('click',function(){
+				var can_click_flag = _click_cb(_new_panel_id,o);
+				console.log(can_click_flag);
+				if(can_click_flag !== undefined &&!can_click_flag){
+					return;
+				}
+				
 				$('#' +_new_panel_id).load( $(this).attr('url') +'.html',function(t){
 					var _new_panel = $('#' +_new_panel_id);
 
@@ -211,7 +243,20 @@
 		_current:{
 
 		},
-		_viewstack:[]
+		_viewstack:[],
+		bool_click_cb:function(level,item_index){
+			console.log('level='+level+ ',item_index=' + item_index);
+			return true;
+		},
+		show_cb:function(level,item_index){
+			console.log('show_cb: level='+level+ ',item_index=' + item_index);
+		},
+		hide_cb:function(level,item_index){
+			console.log('hide_cb: level='+level+ ',item_index=' + item_index);
+		},
+		click_cb:function(level,item_index){
+			console.log('level='+level+ ',item_index=' + item_index);
+		}
   };    
   
 })(jQuery); 
