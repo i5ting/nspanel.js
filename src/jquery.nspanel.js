@@ -133,9 +133,9 @@
 	}
 	
 	//----------------------- jquery   plugin  -----------------------
-  $.fn.panel = function(options) {       
+  $.fn.nspanel = function(options) {       
 		// init var
-    var opts = $.extend({}, $.fn.panel.defaults, options);    
+    var opts = $.extend({}, $.fn.nspanel.defaults, options);    
 		//当前item在自己归属的section中的index
 		var i = 0;
 		
@@ -177,7 +177,7 @@
 					viewstack_push(o,_new_panel)
 					
 					//递归当前section进行panel化
-					_new_panel.find('.sectionloader').panel(o);
+					_new_panel.find('.sectionloader').nspanel(o);
 				});
 			});
 			
@@ -194,7 +194,7 @@
   };  
 	
 	//插件的defaults    
-  $.fn.panel.defaults = {    
+  $.fn.nspanel.defaults = {    
     section_style: {
 			display:'block',
 			'z-index':1000,
