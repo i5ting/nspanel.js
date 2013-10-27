@@ -44,6 +44,7 @@ _(Coming soon)_
 ## Release History
 
 - v0.1.0 支持无限嵌套 2013-10-24
+- v0.1.1 支持callback，切callback参数a)level  b)item_index   c)pre_panel_url
 
 
 ## Contributing
