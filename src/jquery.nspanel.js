@@ -52,6 +52,9 @@
 	 * show
 	 */ 
 	function show_current_panel(new_panel_id,opt){
+		var pre_panel = _get_pre_panel_id(opt);
+		// pp(pre_panel.attr('id'))
+		pp(pre_panel);
 		// cb
 		_show_cb(new_panel_id,opt);
 		
@@ -88,8 +91,8 @@
 		_get_pre_panel(opt).hide();
 	}
 	
-	function viewstack_push(opt,new_panel){
-		opt._viewstack.push( new_panel );
+	function viewstack_push(opt,new_panel,context){
+		opt._viewstack.push( {'panel_info':new_panel,'context_info':context} );
 	}
 	
 	function viewstack_pop(opt){
@@ -132,7 +135,17 @@
 			plog('stack exception....');
 			return;
 		}
-		return opt._viewstack[opt._viewstack.length - 2];
+		return opt._viewstack[opt._viewstack.length - 2].panel_info;
+	}
+	
+	function _get_pre_panel_id(opt){
+		if(opt._viewstack.length < 2){
+			plog('stack exception....');
+			return;
+		}
+		var pre_panel = _get_pre_panel(opt);
+		pp('--'+pre_panel);
+		return pre_panel.attr('id');
 	}
 	
 	function _show_cb(new_panel_id,opt){
@@ -178,7 +191,9 @@
 			//init viewstack
 			// 保证首次调用插件，当前页入栈
 			if(o._viewstack.length == 0){
-				 o._viewstack.push($('.panel_content').first());
+				 // o._viewstack.push($('.panel_content').first());
+				 // 此处的context无效，仅是为了no exception
+				 o._viewstack.push( {'panel_info':$('.panel_content').first(),'context_info':$this} );
 			}
 			
 			// 创建新panel的唯一标识
@@ -206,7 +221,7 @@
 					});
 					  
 					// 新section入栈
-					viewstack_push(o,_new_panel)
+					viewstack_push(o,_new_panel,$this)
 					
 					//递归当前section进行panel化
 					_new_panel.find('.sectionloader').nspanel(o);
@@ -239,9 +254,6 @@
     animation:{
 			speed_in:600,//单位毫秒
 			speed_out:600,//单位毫秒
-		},
-		_current:{
-
 		},
 		_viewstack:[],
 		bool_click_cb:function(level,item_index){
